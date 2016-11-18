@@ -9,31 +9,10 @@ import mx.iteso.TelephonicLine;
 public class WaitOnHook implements State {
     public String goNext(TelephonicLine telephonicLine, int context) {
         String retorno;
-        if(context==telephonicLine.AOff){
-            retorno = "Cambiando a Getting Number";
+        if(context==telephonicLine.OwnSideGoesOnHook){
+            retorno = "Cambiando a Idle";
             System.out.println(retorno);
-            telephonicLine.setState(new GettingNumber());
-        }
-        else if(context==telephonicLine.CallEntry){
-
-        }
-        else if(context==telephonicLine.AOnHook){
-
-        }
-        else if(context==telephonicLine.BSideAcceptsCall){
-
-        }
-        else if(context==telephonicLine.DialledNomBusyOrIncorrect){
-
-        }
-        else if(context==telephonicLine.BSideAnswers){
-
-        }
-        else if(context==telephonicLine.OwnSideGoesOnHook){
-
-        }
-        else if(context==telephonicLine.OtherSideGoesOnHook){
-
+            telephonicLine.setState(new IDLE());
         }
         else {
             retorno = "Contexto inválido";
