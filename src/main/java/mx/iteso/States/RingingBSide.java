@@ -9,31 +9,16 @@ import mx.iteso.TelephonicLine;
 public class RingingBSide implements State {
     public String goNext(TelephonicLine telephonicLine, int context) {
         String retorno;
-        if(context==telephonicLine.AOff){
-            retorno = "Cambiando a Getting Number";
+
+        if(context==telephonicLine.AOnHook){
+            retorno = "Cambiando a Wait on Hook";
             System.out.println(retorno);
-            telephonicLine.setState(new GettingNumber());
-        }
-        else if(context==telephonicLine.CallEntry){
-
-        }
-        else if(context==telephonicLine.AOnHook){
-
-        }
-        else if(context==telephonicLine.BSideAcceptsCall){
-
-        }
-        else if(context==telephonicLine.DialledNomBusyOrIncorrect){
-
+            telephonicLine.setState(new WaitOnHook());
         }
         else if(context==telephonicLine.BSideAnswers){
-
-        }
-        else if(context==telephonicLine.OwnSideGoesOnHook){
-
-        }
-        else if(context==telephonicLine.OtherSideGoesOnHook){
-
+            retorno = "Cambiando a Speech";
+            System.out.println(retorno);
+            telephonicLine.setState(new Speech());
         }
         else {
             retorno = "Contexto inválido";

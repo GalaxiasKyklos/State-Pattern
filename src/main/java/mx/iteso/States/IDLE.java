@@ -9,37 +9,20 @@ import mx.iteso.TelephonicLine;
 public class IDLE implements State {
     public String goNext(TelephonicLine telephonicLine, int context) {
         String retorno;
-        if(context==telephonicLine.AOff){
+        if(context == telephonicLine.AOff){
             retorno = "Cambiando a Getting Number";
             System.out.println(retorno);
             telephonicLine.setState(new GettingNumber());
         }
-        else if(context==telephonicLine.CallEntry){
-
-        }
-        else if(context==telephonicLine.AOnHook){
-
-        }
-        else if(context==telephonicLine.BSideAcceptsCall){
-
-        }
-        else if(context==telephonicLine.DialledNomBusyOrIncorrect){
-
-        }
-        else if(context==telephonicLine.BSideAnswers){
-
-        }
-        else if(context==telephonicLine.OwnSideGoesOnHook){
-
-        }
-        else if(context==telephonicLine.OtherSideGoesOnHook){
-
+        else if(context == telephonicLine.CallEntry) {
+            retorno = "Cambiando a Ringing B Side";
+            System.out.println(retorno);
+            telephonicLine.setState(new RingingBSide());
         }
         else {
             retorno = "Contexto inválido";
             System.out.println(retorno);
         }
-
         return retorno;
     }
 }
