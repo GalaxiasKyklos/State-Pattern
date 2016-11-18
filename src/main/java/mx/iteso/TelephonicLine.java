@@ -36,26 +36,26 @@ public class TelephonicLine {
     }
 
     public void aOnHook() {
-
+        currentState.goNext(this, AOnHook);
     }
 
     public void bSideAcceptsCall() {
-
+        currentState.goNext(this, BSideAcceptsCall);
     }
 
     public void dialledNomBusyOrIncorrect() {
-
+        currentState.goNext(this, DialledNomBusyOrIncorrect);
     }
 
     public void bSideAnswers() {
-
+        currentState.goNext(this, BSideAcceptsCall);
     }
 
     public void ownSideGoesOnHook() {
-
+        currentState.goNext(this, OwnSideGoesOnHook);
     }
 
     public void otherSideGoesOnHook() {
-
+        currentState.goNext(this, OtherSideGoesOnHook);
     }
 }
