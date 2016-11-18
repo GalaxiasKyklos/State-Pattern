@@ -26,4 +26,36 @@ public class TelephonicLine {
     public void setState(State state) {
         this.currentState = state;
     }
+
+    public void makeCall() {
+        currentState.goNext(this, AOff);
+    }
+
+    public void receiveCall() {
+        currentState.goNext(this, CallEntry);
+    }
+
+    public void aOnHook() {
+
+    }
+
+    public void bSideAcceptsCall() {
+
+    }
+
+    public void dialledNomBusyOrIncorrect() {
+
+    }
+
+    public void bSideAnswers() {
+
+    }
+
+    public void ownSideGoesOnHook() {
+
+    }
+
+    public void otherSideGoesOnHook() {
+
+    }
 }
