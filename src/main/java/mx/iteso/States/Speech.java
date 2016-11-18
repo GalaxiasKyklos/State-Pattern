@@ -9,31 +9,15 @@ import mx.iteso.TelephonicLine;
 public class Speech implements State {
     public String goNext(TelephonicLine telephonicLine, int context) {
         String retorno;
-        if(context==telephonicLine.AOff){
-            retorno = "Cambiando a Getting Number";
+        if(context==telephonicLine.OwnSideGoesOnHook){
+            retorno = "Cambiando a IDLE";
             System.out.println(retorno);
-            telephonicLine.setState(new GettingNumber());
-        }
-        else if(context==telephonicLine.CallEntry){
-
-        }
-        else if(context==telephonicLine.AOnHook){
-
-        }
-        else if(context==telephonicLine.BSideAcceptsCall){
-
-        }
-        else if(context==telephonicLine.DialledNomBusyOrIncorrect){
-
-        }
-        else if(context==telephonicLine.BSideAnswers){
-
-        }
-        else if(context==telephonicLine.OwnSideGoesOnHook){
-
+            telephonicLine.setState(new IDLE());
         }
         else if(context==telephonicLine.OtherSideGoesOnHook){
-
+            retorno = "Cambiando a Wait on Hook";
+            System.out.println(retorno);
+            telephonicLine.setState(new WaitOnHook());
         }
         else {
             retorno = "Contexto inválido";

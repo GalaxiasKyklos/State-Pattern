@@ -11,9 +11,9 @@ public class RingingBSide implements State {
         String retorno;
 
         if(context==telephonicLine.AOnHook){
-            retorno = "Cambiando a Wait on Hook";
+            retorno = "Cambiando a IDLE";
             System.out.println(retorno);
-            telephonicLine.setState(new WaitOnHook());
+            telephonicLine.setState(new IDLE());
         }
         else if(context==telephonicLine.BSideAnswers){
             retorno = "Cambiando a Speech";
