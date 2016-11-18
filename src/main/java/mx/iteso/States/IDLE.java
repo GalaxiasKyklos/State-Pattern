@@ -9,6 +9,7 @@ import mx.iteso.TelephonicLine;
 public class IDLE implements State {
     public String goNext(TelephonicLine telephonicLine, int context) {
         String retorno;
+
         if(context == telephonicLine.AOff){
             retorno = "Cambiando a Getting Number";
             System.out.println(retorno);

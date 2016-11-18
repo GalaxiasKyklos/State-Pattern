@@ -9,6 +9,7 @@ import mx.iteso.TelephonicLine;
 public class WaitOnHook implements State {
     public String goNext(TelephonicLine telephonicLine, int context) {
         String retorno;
+
         if(context==telephonicLine.OwnSideGoesOnHook){
             retorno = "Cambiando a Idle";
             System.out.println(retorno);

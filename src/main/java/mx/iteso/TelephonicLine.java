@@ -1,5 +1,7 @@
 package mx.iteso;
 
+import mx.iteso.States.IDLE;
+
 /**
  * Created by Saúl on 17/11/2016.
  */
@@ -18,6 +20,7 @@ public class TelephonicLine {
 
 
     public TelephonicLine() {
+        this.currentState = new IDLE();
     }
 
     public void setState(State state) {
