@@ -8,11 +8,29 @@ import mx.iteso.TelephonicLine;
  */
 public class IDLE implements State {
     public String goNext(TelephonicLine telephonicLine, int context) {
-        switch (context) {
-            case TelephonicLine.contexts.AOff.ordinal():
-                break;
-            case "Call entry":
-                break;
+        if(context==telephonicLine.AOff){
+
+        }
+        else if(context==telephonicLine.CallEntry){
+
+        }
+        else if(context==telephonicLine.AOnHook){
+
+        }
+        else if(context==telephonicLine.BSideAcceptsCall){
+
+        }
+        else if(context==telephonicLine.DialledNomBusyOrIncorrect){
+
+        }
+        else if(context==telephonicLine.BSideAnswers){
+
+        }
+        else if(context==telephonicLine.OwnSideGoesOnHook){
+
+        }
+        else if(context==telephonicLine.OtherSideGoesOnHook){
+
         }
 
         return "";
