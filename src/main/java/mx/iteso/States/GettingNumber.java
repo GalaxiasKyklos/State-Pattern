@@ -16,7 +16,7 @@ public class GettingNumber implements State {
             telephonicLine.setState(new IDLE());
         }
         else if(context==telephonicLine.BSideAcceptsCall){
-            retorno = "Cambiando a Getting Number";
+            retorno = "Cambiando a Ringing A side";
             System.out.println(retorno);
             telephonicLine.setState(new RingingASide());
         }

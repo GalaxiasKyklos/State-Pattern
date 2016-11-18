@@ -48,7 +48,7 @@ public class TelephonicLine {
     }
 
     public void bSideAnswers() {
-        currentState.goNext(this, BSideAcceptsCall);
+        currentState.goNext(this, BSideAnswers);
     }
 
     public void ownSideGoesOnHook() {
