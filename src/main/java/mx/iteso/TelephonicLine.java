@@ -18,7 +18,6 @@ public class TelephonicLine {
 
 
     public TelephonicLine() {
-
     }
 
     public void setState(State state) {
