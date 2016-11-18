@@ -8,8 +8,11 @@ import mx.iteso.TelephonicLine;
  */
 public class IDLE implements State {
     public String goNext(TelephonicLine telephonicLine, int context) {
+        String retorno;
         if(context==telephonicLine.AOff){
-
+            retorno = "Cambiando a Getting Number";
+            System.out.println(retorno);
+            telephonicLine.setState(new GettingNumber());
         }
         else if(context==telephonicLine.CallEntry){
 
@@ -32,7 +35,11 @@ public class IDLE implements State {
         else if(context==telephonicLine.OtherSideGoesOnHook){
 
         }
+        else {
+            retorno = "Contexto inválido";
+            System.out.println(retorno);
+        }
 
-        return "";
+        return retorno;
     }
 }
