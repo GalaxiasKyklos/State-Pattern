@@ -9,13 +9,8 @@ import mx.iteso.TelephonicLine;
 public class GettingNumber implements State {
     public String goNext(TelephonicLine telephonicLine, int context) {
         String retorno;
-        if(context==telephonicLine.AOff){
 
-        }
-        else if(context==telephonicLine.CallEntry){
-
-        }
-        else if(context==telephonicLine.AOnHook){
+         if(context==telephonicLine.AOnHook){
             retorno = "Cambiando a Idle";
             System.out.println(retorno);
             telephonicLine.setState(new IDLE());
@@ -23,27 +18,12 @@ public class GettingNumber implements State {
         else if(context==telephonicLine.BSideAcceptsCall){
             retorno = "Cambiando a Getting Number";
             System.out.println(retorno);
-            telephonicLine.setState(new GettingNumber());
+            telephonicLine.setState(new RingingASide());
         }
-        else if(context==telephonicLine.DialledNomBusyOrIncorrect){
-            retorno = "Cambiando a Getting Number";
+        else if(context==telephonicLine.DialledNomBusyOrIncorrect) {
+            retorno = "Cambiando a Wait on hook";
             System.out.println(retorno);
-            telephonicLine.setState(new GettingNumber());
-        }
-        else if(context==telephonicLine.BSideAnswers){
-            retorno = "Cambiando a Getting Number";
-            System.out.println(retorno);
-            telephonicLine.setState(new GettingNumber());
-        }
-        else if(context==telephonicLine.OwnSideGoesOnHook){
-            retorno = "Cambiando a Getting Number";
-            System.out.println(retorno);
-            telephonicLine.setState(new GettingNumber());
-        }
-        else if(context==telephonicLine.OtherSideGoesOnHook){
-            retorno = "Cambiando a Getting Number";
-            System.out.println(retorno);
-            telephonicLine.setState(new GettingNumber());
+            telephonicLine.setState(new WaitOnHook());
         }
         else {
             retorno = "Contexto inválido";
