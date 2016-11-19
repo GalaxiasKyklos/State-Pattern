@@ -1,3 +1,5 @@
+package States;
+
 import mx.iteso.States.IDLE;
 import mx.iteso.TelephonicLine;
 import static mx.iteso.TelephonicLine.*;

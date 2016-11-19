@@ -1,4 +1,6 @@
-import mx.iteso.States.Speech;
+package States;
+
+import mx.iteso.States.RingingASide;
 import mx.iteso.TelephonicLine;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,28 +11,28 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Saúl on 19/11/2016.
  */
-public class SpeechTest {
+public class RingingASideTest {
     public TelephonicLine telephonicLine;
-    public Speech speech;
+    public RingingASide ringingASide;
 
     @Before
     public void setUp() {
         telephonicLine = new TelephonicLine();
-        speech = new Speech();
+        ringingASide = new RingingASide();
     }
 
     @Test
     public void goNext0Test() {
-        assertEquals(speech.goNext(telephonicLine, OwnSideGoesOnHook), "Cambiando a IDLE");
+        assertEquals(ringingASide.goNext(telephonicLine, AOnHook), "Cambiando a Idle");
     }
 
     @Test
     public void goNext1Test() {
-        assertEquals(speech.goNext(telephonicLine, OtherSideGoesOnHook), "Cambiando a Wait on Hook");
+        assertEquals(ringingASide.goNext(telephonicLine, BSideAnswers), "Cambiando a Speech");
     }
 
     @Test
     public void goNextErrorTest() {
-        assertEquals(speech.goNext(telephonicLine, -1), "Contexto inválido");
+        assertEquals(ringingASide.goNext(telephonicLine, -1), "Contexto inválido");
     }
 }
